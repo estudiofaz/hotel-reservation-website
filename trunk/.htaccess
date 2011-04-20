@@ -1,0 +1,3 @@
+RewriteEngine on
+RewriteCond $1 !^(silex_app\.php|images|css|resource|robots\.txt)
+RewriteRule ^(.*)$ ./silex_app.php/$1 [L]
