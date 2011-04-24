@@ -5,10 +5,9 @@
  */
 $app->get('/', function() use($app) {
     $conn = $app['doctrine.dbal.connection'];
-    $categories = $conn->query('SELECT * FROM users')->fetchAll();
-    
-    
-    return $app['twig']->render('index.html.twig');
+    $categories = $conn->query('SELECT * FROM countries')->fetchAll();
+    //var_dump($categories);        
+    return $app['twig']->render('index.html.twig',array('c'=>$categories));
 })->bind('homepage');
 
 
