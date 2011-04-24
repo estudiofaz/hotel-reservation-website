@@ -12,11 +12,11 @@ $app = new Silex\Application;
 $app['autoloader']->registerNamespace('ExtraExtensions', __DIR__.'/vendor/ext');
 $app->register(new DoctrineExtension, array(
     'doctrine.dbal.connection_options' => array(
-        'driver' => 'pdo_mysql',
-        'dbname' => 'jellydog',
-        'host' => 'localhost',
-        'user' => 'root',
-        'password' => null
+        'driver' => 'pdo_oci',
+        'dbname' => 'orcl',
+        'host' => '192.168.56.2',
+        'user' => 'nizam',
+        'password' => 'shohag'
     ),
     'doctrine.orm' => true,
     'doctrine.orm.entities' => array(
