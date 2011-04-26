@@ -6,22 +6,7 @@
 
 {% block sidebar %}
     <h3>Reservation:</h3>
- <form action="" id="reservation-form">
-    <fieldset>
-        <div class="field">
-            <label>Check In:</label>
-          <select class="select1"><option>30</option></select><select class="select2"><option>April 2009</option></select>
-       </div>
-       <div class="field">
-            <label>Check Out:</label>
-          <select class="select1"><option>01</option></select><select class="select2"><option>May 2009</option></select>
-       </div>
-       <div class="field">
-            Persons: &nbsp;<input type="text" value="1"/>&nbsp; &nbsp; &nbsp; &nbsp; Rooms:&nbsp; <input type="text" value="1"/>
-       </div>
-       <div class="button"><span><span><a href="#" onclick="document.getElementById('reservation-form').submit()">Check Availability</a></span></span></div>
-    </fieldset>
- </form>
+    {% include 'reservation_form.html.twig' %}
   {% endblock %}
 
 

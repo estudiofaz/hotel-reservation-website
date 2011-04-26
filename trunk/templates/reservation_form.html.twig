@@ -1,36 +1,40 @@
-<form action="" id="reservation-form">
+<form action="{{ path('booking_post') }}" id="reservation-form" method="post">
     <fieldset>
         <div class="field">
             <label>Room Type:</label>
-            <select class="select2" style="width: 100%; text-align: center;">
-                <option>ALL</option>
-                <option>Delux</option>
-                <option>Normal AC</option>
-                <option>Normal N-AC</option>
+            <select class="select2" style="width: 100%; text-align: center;" name="room_type">
+                <option value="0">ALL</option>
+                <option value="1">Delux</option>
+                <option value="2">Normal AC</option>
+                <option value="3">Normal N-AC</option>
             </select>
        </div>        
         <div class="field">
             <label>Check In:</label>
-          <select class="select1">
-                {% for i in 1..30 %}
+          <select class="select1" name="checkInDay">
+                {% for i in 1..31 %}
                     <option id="{{i}}">{{i}}</option>
                 {% endfor %}
-          </select><select class="select2">
-                <option>April 2009</option>
+          </select><select class="select2" name="checkInMonth">
+                {% for m in months %}
+                    <option value="{{ m }}">{{ m }}</option>
+                {% endfor %}
           </select>
        </div>
        <div class="field">
-            <label>Check In:</label>
-          <select class="select1">
-                {% for i in 1..30 %}
+            <label>Check Out:</label>
+          <select class="select1" name="checkOutDay">
+                {% for i in 1..31 %}
                     <option id="{{i}}">{{i}}</option>
                 {% endfor %}
-          </select><select class="select2">
-                <option>April 2009</option>
+          </select><select class="select2" name="checkOutMonth">
+                {% for m in months %}
+                    <option value="{{ m }}">{{ m }}</option>
+                {% endfor %}
           </select>
        </div>
        <div class="field">
-            Persons: &nbsp;<input type="text" value="1"/>&nbsp; &nbsp; &nbsp; &nbsp; Rooms:&nbsp; <input type="text" value="1"/>
+            &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; Rooms:&nbsp; <input type="text" name="rooms" value="1"/>
        </div>
        <div class="button"><span><span><a href="#" onclick="document.getElementById('reservation-form').submit()">Check Availability</a></span></span></div>
     </fieldset>

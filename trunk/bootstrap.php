@@ -12,7 +12,7 @@ $app = new Silex\Application;
 $app['autoloader']->registerNamespace('ExtraExtensions', __DIR__.'/vendor/ext');
 $app->register(new DoctrineExtension, array(
     'doctrine.dbal.connection_options' => array(
-        'driver' => 'pdo_oci',
+        'driver' => 'oci8',
         'dbname' => 'orcl',
         'host' => '192.168.56.2',
         'user' => 'nizam',
